@@ -11,7 +11,7 @@ resource "aws_launch_template" "Template" {
   instance_type = "t2.micro"
  
   network_interfaces {
-    associate_public_ip_address = true
+    associate_public_ip_address = false
   }
 
 }
