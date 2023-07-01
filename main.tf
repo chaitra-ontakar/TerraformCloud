@@ -32,7 +32,7 @@ resource "aws_lb_listener_rule" "redirect_http_to_https" {
       port        = "80"
       protocol    = "HTTP"
       status_code = "HTTP_301"
-      host = "#{host}"
+      host = "www.example.com"
     }
   }
 
