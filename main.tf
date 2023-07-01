@@ -16,7 +16,7 @@ resource "aws_lb_listener" "front_end" {
       port        = "80"
       protocol    = "HTTP"
       status_code = "HTTP_301"
-      host = "www.example.com"
+      host = "#{host}"
     }
   }
 }
