@@ -15,8 +15,7 @@ resource "aws_lb_listener" "front_end" {
     redirect {
       port        = "80"
       protocol    = "HTTP"
-      status_code = "HTTP_301"
-      host = "#{host}"
+      status_code = "HTTP_301"      
     }
   }
 }
