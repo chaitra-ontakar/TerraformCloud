@@ -14,15 +14,7 @@ provider "aws" {
 resource "aws_lb" "test" {
   name               = "test-lb-tf"
   internal           = false
-  
+  load_balancer_type = "gateway"
    
-  enable_deletion_protection = true
-}
-
-resource "aws_lb" "test1" {
-  name               = "test-lb-tf"
-  internal           = false
-  
-
   enable_deletion_protection = true
 }
