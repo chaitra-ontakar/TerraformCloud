@@ -1,0 +1,16 @@
+# Imports common-functions
+import "tfplan-functions" as tfplan
+
+# Allowed values for ssl_policy
+allowed_value = "Test-Policy"
+
+# Get all ELB V2 listener
+ELB_V2_listener = tfplan.find_resources("aws_lb_listener")
+
+# Return all the listener in which ssl_policy is not set as Test-Policy
+violating_resources = tfplan.filter_attribute_is_not_value(ELB_V2_listener, "ssl_policy", allowed_value, true)
+
+# Main rule
+main = rule {
+    length(violating_resources["messages"]) is 0
+}
