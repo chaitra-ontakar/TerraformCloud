@@ -9,11 +9,7 @@ terraform {
 
 provider "aws" {
   # Configuration options
-  access_key = "AKIAUZD7U647F65SM7RY"
-secret_key = "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"
-region = "us-east-2"
-
-}
+  }
 
 resource "aws_lb" "test" {
   name               = "test-lb-tf"
