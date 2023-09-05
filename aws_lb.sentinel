@@ -1,0 +1,17 @@
+# Imports common-functions
+import "tfplan-functions" as tfplan
+
+# approved load balancer types are only Network and Application Load Balancer
+approved_load_balancer = ["network", "application"]
+
+# Get all ELB V2 load balancer
+ELB_V2_load_balancer = tfplan.find_resources("aws_lb")
+
+# Return all the load balancer in which load balancer is not set as Network and Application Load Balancer
+# If the value of load balancer is not then it defaults to application load balancer
+violating_resources = tfplan.filter_attribute_not_in_list(ELB_V2_load_balancer, "load_balancer_type", approved_load_balancer, true)
+
+# Main rule
+main = rule {
+    length(violating_resources["messages"]) is 0
+}

@@ -14,6 +14,6 @@ provider "aws" {
 resource "aws_neptune_cluster" "default" {
   engine                              = "neptune"
   skip_final_snapshot                 = true
-  iam_database_authentication_enabled = true
+  iam_database_authentication_enabled = false
   apply_immediately                   = true
 }
