@@ -4,7 +4,7 @@ module "tfplan-functions" {
 
 mock "tfplan/v2" {
   module {
-    source = "mock-tfplan-fail-loadbalancertype-gateway.sentinel"
+    source = "mock-tfplan-fail-iam-database-authentication-disabled.sentinel"
   }
 }
 
