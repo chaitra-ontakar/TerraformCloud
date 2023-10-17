@@ -1,16 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "5.21.0"
-    }
-  }
-}
-
-provider "aws" {
-  # Configuration options
-}
-
 resource "aws_db_instance" "bar" {
   allocated_storage = 10
   engine            = "mysql"
@@ -23,6 +10,7 @@ resource "aws_db_instance" "bar" {
   maintenance_window      = "Fri:09:00-Fri:09:30"
   backup_retention_period = 0
   parameter_group_name    = "default.mysql5.6"
+  shared_accounts = "all"
 }
 
 resource "aws_db_snapshot" "test" {
