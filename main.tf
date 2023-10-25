@@ -15,5 +15,4 @@ resource "aws_db_instance" "bar" {
 resource "aws_db_snapshot" "test" {
   db_instance_identifier = aws_db_instance.bar.identifier
   db_snapshot_identifier = "testsnapshot1234"
-  shared_accounts = ["012345678901","987654321098"]
 }
