@@ -9,11 +9,18 @@ resource "aws_iam_group_policy" "my_developer_policy" {
     Statement = [
       {
         Action = [
-          "iam:*",
+          "ec2:Describe*",
         ]
         Effect   = "Allow"
         Resource = "*"
       },
+      {
+        Action = [
+          "iam:*",
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      }
     ]
   })
 }
