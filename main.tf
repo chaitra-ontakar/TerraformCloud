@@ -8,8 +8,10 @@ resource "aws_iam_group_policy" "my_developer_policy" {
     Version = "2012-10-17"
     Statement = [
       {
-        Action = "*"
-        Effect   = "Deny"
+        Action = [
+          "ec2:Describe*",
+        ]
+        Effect   = "Allow"
         Resource = "*"
       },
     ]
