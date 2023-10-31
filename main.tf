@@ -9,7 +9,7 @@ resource "aws_iam_group_policy" "my_developer_policy" {
     Statement = [
       {
         Action = [
-          "iam:GetAccountSummary",
+          "iam:*",
         ]
         Effect   = "Allow"
         Resource = "*"
