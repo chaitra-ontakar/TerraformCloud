@@ -56,7 +56,7 @@ resource "aws_wafv2_web_acl_logging_configuration" "loggingconfiguration" {
   resource_arn            = aws_wafv2_web_acl.webacl.arn
   redacted_fields {
     single_header {
-      name = "x-auth-token"
+      name = "token"
     }
   }
 }
